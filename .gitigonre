@@ -1,0 +1,12 @@
+#Objektfiler
+*.o
+
+#Körbara filer
+a.out
+
+ 
+# VS Code-inställningar
+.vscode/
+ 
+# Temporära filer
+*~
