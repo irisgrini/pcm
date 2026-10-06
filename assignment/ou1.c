@@ -21,7 +21,7 @@ int main(void)
 	printf("1. Set exchange rate in SEK (current rate: %.2f)\n", rate);
 	printf("2. Read prices in the foreign currency\n");
 	printf("3. End\n");
-	printf("\n Enter your choice (1-3): ");
+	printf("\n Enter your choice (1 - 3): ");
 	scanf("%d", &choice);
 
 	//Switch statement to handle the users choice
@@ -36,7 +36,7 @@ int main(void)
 	// here the user will choose prices and the program will calculate the sum in the foreign currency and in SEK 
 		case 2:
 			do {
-				printf("\n Enter price (finish with <0): ");
+				printf("Enter price (finish with <0): ");
 				scanf("%lf", &price);
 					
 					if (price >0) {
@@ -44,7 +44,7 @@ int main(void)
 					}
 			} while (price >=0);
 
-			printf("Sum in foreign currency: %.2lf\n", total);
+			printf("\n Sum in foreign currency: %.2lf\n", total);
 			printf("Sum in SEK: %.2lf\n", total*rate);
 			break;
 	
