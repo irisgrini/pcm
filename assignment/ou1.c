@@ -1,0 +1,50 @@
+#include <stdio.h>
+/* Name: Iris Grini, CS usarname: tfy26igi
+Date for submission: ... v1.0
+This program is a easy tool to help calculate a sum depending of different valuta courses.
+AI kommentar: Jag fick hjälp av AI genom att det hjälpte mig komma på att jag kna avsluta vhile satsen med choice !=3*/
+
+int main(void)
+{
+	//define variables, int adn double, for the users choice
+	int choice =1;
+	double rate = 1.0;
+
+	printf("Your shopping assistant\n\n");
+
+	//Printing out menu and scanning the users choice. the menu will repeat as long as the user does not choose 3. 
+	while (choice !=3) {
+	printf("1. Set exchange rate in SEK (current rate: %.2f)\n", rate);
+	printf("2. Read prices in the foreign currency\n");
+	printf("3. End\n");
+		printf("\n Enter your choice (1-3): ");
+	scanf("%d", &choice);
+
+	//Swich statement to handle the users choice
+	switch (choice) {
+		
+	// here the user will choose an exchange rate	
+		case 1:
+			printf("\n Enter exchange rate: ");
+			scanf("%lf", &rate);
+			printf("\n");
+			break;
+	
+	// here the user will choose prices and the program will calculate the sum in the forgain currancy and in SEK 
+		case 2:
+			break;
+	
+	// this will be the end of the program and break the loop
+		case 3:
+			printf("End of program!\n");
+			break;	
+
+	// the choice will be invalid and the loop starts over
+		default:
+			printf("\n Not a valid choice!\n");
+			printf("\n");
+			break;	
+		}
+	}
+	return 0;
+}
