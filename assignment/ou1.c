@@ -7,10 +7,13 @@ och en lösning på hur jag kan addera ihop användarens input när man ska summ
 
 int main(void)
 {
-	//define variables, int and double, for the users choice
+	//Define variables for the code
 	int choice =1;
 	double rate = 1.0;
-
+	double price;
+	double total = 0.0;
+	
+	// Printing out a title
 	printf("Your shopping assistant\n\n");
 
 	//Printing out menu and scanning the users choice. the menu will repeat as long as the user does not choose 3. 
@@ -21,7 +24,7 @@ int main(void)
 	printf("\n Enter your choice (1-3): ");
 	scanf("%d", &choice);
 
-	//Swich statement to handle the users choice
+	//Switch statement to handle the users choice
 	switch (choice) {
 	// here the user will choose an exchange rate	
 		case 1:
@@ -30,10 +33,8 @@ int main(void)
 			printf("\n");
 			break;
 	
-	// here the user will choose prices and the program will calculate the sum in the forgain currancy and in SEK 
+	// here the user will choose prices and the program will calculate the sum in the foreign currency and in SEK 
 		case 2:
-		double price;
-		double total = 0.0;
 			do {
 				printf("\n Enter price (finish with <0): ");
 				scanf("%lf", &price);
@@ -43,16 +44,16 @@ int main(void)
 					}
 			} while (price >=0);
 
-			printf("Sum in forgein currency: %.2lf\n", total);
+			printf("Sum in foreign currency: %.2lf\n", total);
 			printf("Sum in SEK: %.2lf\n", total*rate);
 			break;
 	
-	// this will be the end of the program and break the loop
+	// this will be the end of the program and the menu will not reappear
 		case 3:
 			printf("End of program!\n");
 			break;	
 
-	// the choice will be invalid and the loop starts over
+	// the user's choice will be invalid and the menu reappears
 		default:
 			printf("\n Not a valid choice!\n");
 			printf("\n");
