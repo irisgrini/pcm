@@ -3,7 +3,7 @@
 Date for submission: 07.10.2026 v1.0
 This program is a easy tool to help calculate a sum depending of different valuta courses.
 AI kommentar: Jag fick hjälp av AI genom att det hjälpte mig komma på att jag kan avsluta while satsen med choice !=3,
-och en lösning på hur jag kan addera ihop användarens input när man ska summera*/
+och en lösning på hur jag kan addera ihop användarens input när man ska summera i case 2*/
 
 int main(void)
 {
@@ -37,7 +37,7 @@ int main(void)
 	// here the user will choose prices and the program will calculate the sum in the foreign currency and in SEK 
 		case 2:
 			do {
-				printf("Enter price (finish with <0): ");
+				printf("Enter price (finish with < 0): ");
 				scanf("%lf", &price);
 					
 					if (price >0) {
