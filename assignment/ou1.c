@@ -21,7 +21,7 @@ int main(void)
 	printf("1. Set exchange rate in SEK (current rate: %.2f)\n", rate);
 	printf("2. Read prices in the foreign currency\n");
 	printf("3. End\n");
-	printf("\n Enter your choice (1 - 3): ");
+	printf("\nEnter your choice (1 - 3): ");
 	scanf("%d", &choice);
 	printf("\n");
 
@@ -29,13 +29,14 @@ int main(void)
 	switch (choice) {
 	// here the user will choose an exchange rate	
 		case 1:
-			printf(" Enter exchange rate: ");
+			printf("Enter exchange rate: ");
 			scanf("%lf", &rate);
 			printf("\n");
 			break;
 	
 	// here the user will choose prices and the program will calculate the sum in the foreign currency and in SEK 
 		case 2:
+		total = 0.0;
 			do {
 				printf("Enter price (finish with < 0): ");
 				scanf("%lf", &price);
