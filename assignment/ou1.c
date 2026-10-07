@@ -1,6 +1,6 @@
 #include <stdio.h>
 /* Name: Iris Grini, CS usarname: tfy26igi
-Date for submission: ... v1.0
+Date for submission: 07.10.2026 v1.0
 This program is a easy tool to help calculate a sum depending of different valuta courses.
 AI kommentar: Jag fick hjälp av AI genom att det hjälpte mig komma på att jag kan avsluta while satsen med choice !=3,
 och en lösning på hur jag kan addera ihop användarens input när man ska summera*/
@@ -23,12 +23,13 @@ int main(void)
 	printf("3. End\n");
 	printf("\n Enter your choice (1 - 3): ");
 	scanf("%d", &choice);
+	printf("\n");
 
 	//Switch statement to handle the users choice
 	switch (choice) {
 	// here the user will choose an exchange rate	
 		case 1:
-			printf("\n Enter exchange rate: ");
+			printf(" Enter exchange rate: ");
 			scanf("%lf", &rate);
 			printf("\n");
 			break;
@@ -44,18 +45,18 @@ int main(void)
 					}
 			} while (price >=0);
 
-			printf("\n Sum in foreign currency: %.2lf\n", total);
-			printf("Sum in SEK: %.2lf\n", total*rate);
+			printf("\nSum in foreign currency: %.2lf\n", total);
+			printf("Sum in SEK: %.2lf\n\n", total*rate);
 			break;
 	
 	// this will be the end of the program and the menu will not reappear
 		case 3:
-			printf("End of program!\n");
+			printf("End of program!\n\n");
 			break;	
 
 	// the user's choice will be invalid and the menu reappears
 		default:
-			printf("\n Not a valid choice!\n");
+			printf("Not a valid choice!\n");
 			printf("\n");
 			break;	
 		}
