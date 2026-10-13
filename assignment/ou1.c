@@ -19,16 +19,16 @@ int main(void)
 
 	//Printing out menu and scanning the users choice. the menu will repeat as long as the user does not choose 3. 
 	while (choice !=3) {
-	printf("1. Set exchange rate in SEK (current rate: %.2f)\n", rate);
-	printf("2. Read prices in the foreign currency\n");
-	printf("3. End\n");
-	printf("\nEnter your choice (1 - 3): ");
-	scanf("%d", &choice);
-	printf("\n");
+		printf("1. Set exchange rate in SEK (current rate: %.2f)\n", rate);
+		printf("2. Read prices in the foreign currency\n");
+		printf("3. End\n");
+		printf("\nEnter your choice (1 - 3): ");
+		scanf("%d", &choice);
+		printf("\n");
 
 	//Switch statement to handle the users choice
 	switch (choice) {
-	//Here the user will choose an exchange rate	
+		//Here the user will choose an exchange rate	
 		case 1:
 			printf("Enter exchange rate: ");
 			scanf("%lf", &rate);
@@ -37,8 +37,8 @@ int main(void)
 	
 	//Here the user will choose prices and the program will calculate the sum in the foreign currency and in SEK 
 		case 2:
-		total = 0.0;
 			do {
+				total=0;
 				printf("Enter price (finish with < 0): ");
 				scanf("%lf", &price);
 					
