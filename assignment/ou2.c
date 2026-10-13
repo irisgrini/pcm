@@ -5,7 +5,7 @@ This program is a way to calculate judges score in a competition
 AI comment: */
 
 //Write out the information for the program
-void menu(void) {
+void print_menu(void) {
 	printf("Program information\n");
 	printf("The program reads in the number of judges and the score from each judge.\n"
 "Then it calculates the average score without regard to the lowest and\n"
@@ -16,7 +16,7 @@ void menu(void) {
 
 /*Ask the user for the number of judges, this will repeat if the number is not between 3 and 10. 
 This funktion returns the number of judges to main*/
-int nr_judges (void){
+int number_of_judges (void){
 	int judge;
 	do {
 		printf("Number of judges (min 3 and max 10 judges)? ");
@@ -25,57 +25,42 @@ int nr_judges (void){
 	return judge;
 }
 
+
 /*The user fills our the attained scores from the judges. The program will ask for scores as many times as there are judges.
 this funktion will return the scores to main in an array*/
-void score_from_judge (double score[], int judge) {
-	double score[judge];
-	int i=0;
-	
-	for (int i=0; i<judge; i++) {
-		printf("Score from judge %d? ", i+1);
-		scanf("%lf", &score[i]);
-	}
+void scan_score(int judge, double score[]){
+	for(int i=0; i<judge; i++){
+        printf("Score from judge %d? ", i+1);
+        scanf("%lf", &score[i]);
+}
 }
 
 //This funktion writes out the scores from each judge
-void loaded_score (int judge, double score[]){
-	printf("Loaded socres:\n");
-	for (int i=0; i<judge; i++) {
-		printf("Judge %d: %lf", i+1, score[i]);
-	}
+void load_score(int judge, double score[]) {
+	printf("Loaded scores:\n");
+	for(int i=0; i<judge; i++){
+        printf("Judge %d: %.1lf\n", i+1, score[i]);
+}
 }
 
 /*Räkna fram resultat- I steg 5 ska en funktion användas där högsta, lägsta och medelpoäng ''returneras'' via
  tre separata pekarparametrar. Detta krav på programmet kan verka godtyckligt, 
  men ett av de viktigaste målen med denna uppgift är att ni ska testas på er förståelse av pekarparametrar
   och hur man använder dessa på ett korrekt sätt.*/
-int calculate (double score[], int judge){
-	int judge = score[];
-		for(int i; i<judge; i++) {
-			if (score[]>judge){
-				judge=score[i];
-			}
-		}
-}
 
 // Skriv ut resultat
 
 int main (void) {
-	menu(); 
+	
+	print_menu(); 
 
-	int judge= nr_judges();
+	int judge= number_of_judges();
 
-	score_from_judge(&judge);
-	//gör en pekare
 	double score[judge];
+	scan_score(judge, score);
 
-	loaded_score(judge, score);
-
-	//Here we calculate the higghest score with our calculate funktion
-	printf("Final result");
-	int result;
-	result = calculate(score, judge);
-	printf("Highest judge score: %.1lf", result);
-
+	load_score(judge, score);
+	
+	printf("normal exit\n");
 	return 0;
 }
