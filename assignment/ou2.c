@@ -80,16 +80,18 @@ void print_result(double*highest_score, double*lowest_score, double*average_scor
 //Main calls on the different funktions
 int main (void) {
 
-	int judge;
+	
+	
+	print_menu(); 
+	int judge = number_of_judges();
 	double score[judge];
+	scan_score(judge, score);
+	load_score(judge, score);
+
 	double highest_score= score[0];
 	double lowest_score= score[0];
 	double average_score;
-	
-	print_menu(); 
-	int judge= number_of_judges();
-	scan_score(judge, score);
-	load_score(judge, score);
+
 	calculate_score(&average_score, judge, score, &lowest_score, &highest_score);
 	print_result(&highest_score, &lowest_score, &average_score);
 	
